@@ -1,12 +1,18 @@
 @import url(https://fonts.googleapis.com/css?family=Cabin:400);
 
+.center{
+	height: 100vh;
+	width: 100vw;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
 .webdesigntuts-workshop {
 	background: #1a1a1a;
-	height: 100%;
 	position: absolute;
-	text-align: center;
-    width: 100%;
-    
+	text-align: center; 
 }
 
 .webdesigntuts-workshop:before,
@@ -27,7 +33,7 @@
 	background: -o-linear-gradient(left, #E59285, #444, #E59285);
 	background: -ms-linear-gradient(left, #E59285, #444, #E59285);
 	background: linear-gradient(left, #E59285, #444, #E59285);
-    top: 192px;
+    top: 300px;
 }
 
 .webdesigntuts-workshop:after {
@@ -37,7 +43,7 @@
 	background: -o-linear-gradient(left, #151515, #000, #E57462);	
 	background: -ms-linear-gradient(left, #151515, #000, #E57462);	
     background: linear-gradient(left, #151515, #000, #E57462);	
-	top: 191px;
+	top: 298px;
 }
 
 .webdesigntuts-workshop form {
@@ -54,7 +60,6 @@
     flex-direction: row;
     justify-content: space-evenly;
 	font-size: 0px;
-	margin: 150px auto 0;
 	padding: 20px;
 	position: relative;
     z-index: 1;
