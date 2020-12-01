@@ -1,10 +1,48 @@
-
-        <section class="webdesigntuts-workshop center">
-            <div>
-            </div>
-            <form action="" method="">
-                <input type="search" placeholder="name || first name || second name">
-                <button>Search</button>
+<section class="webdesigntuts-workshop center container-fluid">
+    <div class="row d-flex flex-column">
+        <div class="col formulario">
+            <hr>
+            <form #buscador="ngForm" action="" method="">
+                <input #search type="search" placeholder="name || first name || second name">
+                <button (click)="mostrarUsuario()">Search</button>
             </form>
-            <app-cards></app-cards>
-        </section>
+            <hr>
+        </div>
+
+        <div class="col">
+            <table class="table my-4 ">
+                <thead>
+                    <tr>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Primer Apellido</th>
+                        <th scope="col">Segundo Apellido</th>
+                        <th scope="col">Fecha Nacimiento</th>
+                        <th scope="col">Detalle</th>
+                    </tr>
+                </thead>
+                <tbody *ngIf="user.length > 0">
+                    <tr *ngFor="let u of user | paginate:
+                    {
+                    itemsPerPage: 2,
+                    currentPage: paginaActual,
+                    totalItems: user.length 
+                    }
+                    ">
+                        <td>{{u.identity.name}}</td>
+                        <td>{{u.identity.firstname}}</td>
+                        <td>{{u.identity.secondname}}</td>
+                        <td>{{u.identity.dateofbirth}}</td>
+                        <td> <a [routerLink]="['/user', u.identifier]" routerLinkActive="router-link-active">
+                                <!-- <i class="far fa-eye fa-2x"></i> -->
+                                <div class="spinner-grow spinner-grow-sm text-success"></div>
+
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <pagination-controls class="paginacion" (pageChange)="paginaActual = $event"></pagination-controls>
+        </div>
+    </div>
+
+</section>

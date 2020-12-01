@@ -1,21 +1,35 @@
 @import url(https://fonts.googleapis.com/css?family=Cabin:400);
 
-.center{
-	height: 100vh;
-	width: 100vw;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
+.center {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+}
+.formulario {
+  margin-top: 10vh;
 }
 
 .webdesigntuts-workshop {
-	background: #1a1a1a;
-	position: absolute;
-	text-align: center; 
+  background: #1a1a1a;
+  position: absolute;
+  text-align: center;
 }
-
-.webdesigntuts-workshop:before,
+.paginacion /deep/ .ngx-pagination .current {
+  background:#2e2e2e;
+  color: #2e2e2e;
+}
+.paginacion /deep/ .ngx-pagination span{
+  background: none;
+  color: green;
+}
+.pagination-next :disabled{
+  background: none;
+  color: #2e2e2e;
+}
+/* .webdesigntuts-workshop:before,
 .webdesigntuts-workshop:after {
 	content: '';
 	display: block;	
@@ -24,214 +38,255 @@
 	margin: 0 0 0 -400px;
 	position: absolute;
 	width: 800px;
-}
+} */
 
+hr {
+  border: 0.5px solid #2e2e2e;
+}
 .webdesigntuts-workshop:before {
-	background: #444;
-	background: -webkit-linear-gradient(left, #E59285, #444, #E59285);
-	background: -moz-linear-gradient(left, #E59285, #444, #E59285);
-	background: -o-linear-gradient(left, #E59285, #444, #E59285);
-	background: -ms-linear-gradient(left, #E59285, #444, #E59285);
-	background: linear-gradient(left, #E59285, #444, #E59285);
-    top: 300px;
+  background: #444;
+  background: -webkit-linear-gradient(left, #e59285, #444, #e59285);
+  background: -moz-linear-gradient(left, #e59285, #444, #e59285);
+  background: -o-linear-gradient(left, #e59285, #444, #e59285);
+  background: -ms-linear-gradient(left, #e59285, #444, #e59285);
+  background: linear-gradient(left, #e59285, #444, #e59285);
+  top: 300px;
 }
 
 .webdesigntuts-workshop:after {
-	background: #000;
-	background: -webkit-linear-gradient(left, #151515, #000, #E57462);	
-	background: -moz-linear-gradient(left, #151515, #000, #E57462);	
-	background: -o-linear-gradient(left, #151515, #000, #E57462);	
-	background: -ms-linear-gradient(left, #151515, #000, #E57462);	
-    background: linear-gradient(left, #151515, #000, #E57462);	
-	top: 298px;
+  background: #000;
+  background: -webkit-linear-gradient(left, #151515, #000, #e57462);
+  background: -moz-linear-gradient(left, #151515, #000, #e57462);
+  background: -o-linear-gradient(left, #151515, #000, #e57462);
+  background: -ms-linear-gradient(left, #151515, #000, #e57462);
+  background: linear-gradient(left, #151515, #000, #e57462);
+  top: 298px;
 }
 
+
+table thead{
+	box-shadow: 0px 0px 10px 0px rgb(0, 0, 0) inset;
+	background-color: rgb(34, 34, 34);
+}
+
+.table {
+  font-family: "Cabin", helvetica, arial, sans-serif;
+  font-size: 13px;
+}
+.table td,
+.table th {
+  border-top: none;
+  color: green;
+}
+.table tbody td{
+  border-top: 1px solid #57ca7a28;
+
+/*   box-shadow: 0px 0px 1px 0px #03e647 inset;
+ */}
+.table thead th {
+  border-bottom: none;
+}
 .webdesigntuts-workshop form {
-	background: #111;
-	background: -webkit-linear-gradient(#76CA8F, #111);
-	background: -moz-linear-gradient(#57CA7A, #111);
-	background: -o-linear-gradient(#249646, #111);
-	background: -ms-linear-gradient(#307043, #111);
-	background: linear-gradient(#0C6125, #111);
-	border: 1px solid #000;
-	border-radius: 5px;
-	box-shadow: inset 0 0 0 1px #76CA8F;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-	font-size: 0px;
-	padding: 20px;
-	position: relative;
-    z-index: 1;
-    width: 60vw;
+  background: #111;
+  background: -webkit-linear-gradient(#76ca8f, #111);
+  background: -moz-linear-gradient(#57ca7a, #111);
+  background: -o-linear-gradient(#249646, #111);
+  background: -ms-linear-gradient(#307043, #111);
+  background: linear-gradient(#0c6125, #111);
+  border: 1px solid #000;
+  border-radius: 5px;
+  box-shadow: inset 0 0 0 1px #76ca8f;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  font-size: 0px;
+  padding: 20px;
+  position: relative;
+  z-index: 1;
+  width: 60vw;
 }
 
 .webdesigntuts-workshop input {
-	background: #222;
-	background: -webkit-linear-gradient(#333, #222);	
-	background: -moz-linear-gradient(#333, #222);	
-	background: -o-linear-gradient(#333, #222);	
-	background: -ms-linear-gradient(#333, #222);	
-	background: linear-gradient(#333, #222);	
-	border: 1px solid #444;
-	border-radius: 5px 0 0 5px;
-	box-shadow: 0 2px 0 #000;
-	color: #888;
-	display: block;
-	float: left;
-	font-family: 'Cabin', helvetica, arial, sans-serif;
-	font-size: 13px;
-	font-weight: 400;
-	height: 40px;
-	margin: 0;
-	padding: 0 10px;
-	text-shadow: 0 -1px 0 #000;
-	width: 70%;
+  background: #222;
+  background: -webkit-linear-gradient(#333, #222);
+  background: -moz-linear-gradient(#333, #222);
+  background: -o-linear-gradient(#333, #222);
+  background: -ms-linear-gradient(#333, #222);
+  background: linear-gradient(#333, #222);
+  border: 1px solid #444;
+  border-radius: 5px 0 0 5px;
+  box-shadow: 0 2px 0 #000;
+  color: #888;
+  display: block;
+  float: left;
+  font-family: "Cabin", helvetica, arial, sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  height: 40px;
+  margin: 0;
+  padding: 0 10px;
+  text-shadow: 0 -1px 0 #000;
+  width: 70%;
 }
 
 .ie .webdesigntuts-workshop input {
-	line-height: 40px;
+  line-height: 40px;
 }
 
 .webdesigntuts-workshop input::-webkit-input-placeholder {
-   color: #888;
+  color: #888;
 }
 
 .webdesigntuts-workshop input:-moz-placeholder {
-   color: #888;
+  color: #888;
 }
 
 .webdesigntuts-workshop input:focus {
-	-webkit-animation: glow 800ms ease-out infinite alternate;
-	-moz-animation: glow 800ms ease-out infinite alternate;
-	-o-animation: glow 800ms ease-out infinite alternate;
-	-ms-animation: glow 800ms ease-out infinite alternate;
-	animation: glow 800ms ease-out infinite alternate;
-	background: #0B4252;
-	background: -webkit-linear-gradient(#333933, #222922);
-	background: -moz-linear-gradient(#333933, #222922);
-	background: -o-linear-gradient(#333933, #222922);
-	background: -ms-linear-gradient(#333933, #222922);
-	background: linear-gradient(#333933, #222922);
-	border-color: #393;
-	box-shadow: 0 0 5px rgba(0,255,0,.2), inset 0 0 5px rgba(0,255,0,.1), 0 2px 0 #000;
-	color: #efe;
-	outline: none;
+  -webkit-animation: glow 800ms ease-out infinite alternate;
+  -moz-animation: glow 800ms ease-out infinite alternate;
+  -o-animation: glow 800ms ease-out infinite alternate;
+  -ms-animation: glow 800ms ease-out infinite alternate;
+  animation: glow 800ms ease-out infinite alternate;
+  background: #0b4252;
+  background: -webkit-linear-gradient(#333933, #222922);
+  background: -moz-linear-gradient(#333933, #222922);
+  background: -o-linear-gradient(#333933, #222922);
+  background: -ms-linear-gradient(#333933, #222922);
+  background: linear-gradient(#333933, #222922);
+  border-color: #393;
+  box-shadow: 0 0 5px rgba(0, 255, 0, 0.2), inset 0 0 5px rgba(0, 255, 0, 0.1),
+    0 2px 0 #000;
+  color: #efe;
+  outline: none;
 }
 
-.webdesigntuts-workshop input:focus::-webkit-input-placeholder { 
-	color: #efe;
+.webdesigntuts-workshop input:focus::-webkit-input-placeholder {
+  color: #efe;
 }
 
 .webdesigntuts-workshop input:focus:-moz-placeholder {
-	color: #efe;
+  color: #efe;
 }
 
 .webdesigntuts-workshop button {
-	background: #222;
-	background: -webkit-linear-gradient(#333, #222);
-	background: -moz-linear-gradient(#333, #222);
-	background: -o-linear-gradient(#333, #222);
-	background: -ms-linear-gradient(#333, #222);
-	background: linear-gradient(#333, #222);
-	-webkit-box-sizing: content-box;
-	-moz-box-sizing: content-box;
-	-o-box-sizing: content-box;
-	-ms-box-sizing: content-box;
-	box-sizing: content-box;
-	border: 1px solid #444;
-	border-left-color: #000;
-	border-radius: 0 5px 5px 0;
-	box-shadow: 0 2px 0 #000;
-	color: #fff;
-	display: block;
-	float: left;
-	font-family: 'Cabin', helvetica, arial, sans-serif;
-	font-size: 13px;
-	font-weight: 400;
-	height: 40px;
-	line-height: 40px;
-	margin: 0;
-	padding: 0;
-	position: relative;
-	text-shadow: 0 -1px 0 #000;
-	width: 80px;
-}	
+  background: #222;
+  background: -webkit-linear-gradient(#333, #222);
+  background: -moz-linear-gradient(#333, #222);
+  background: -o-linear-gradient(#333, #222);
+  background: -ms-linear-gradient(#333, #222);
+  background: linear-gradient(#333, #222);
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  -o-box-sizing: content-box;
+  -ms-box-sizing: content-box;
+  box-sizing: content-box;
+  border: 1px solid #444;
+  border-left-color: #000;
+/*   border-radius: 0 5px 5px 0;
+ */  box-shadow: 0 2px 0 #000;
+  color: #fff;
+  display: block;
+  float: left;
+  font-family: "Cabin", helvetica, arial, sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  height: 40px;
+  line-height: 40px;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  text-shadow: 0 -1px 0 #000;
+  width: 80px;
+}
 
 .webdesigntuts-workshop button:hover,
 .webdesigntuts-workshop button:focus {
-	background: #0C6125;
-	background: -webkit-linear-gradient(#393939, #292929);	
-	background: -moz-linear-gradient(#393939, #292929);	
-	background: -o-linear-gradient(#393939, #292929);	
-	background: -ms-linear-gradient(#393939, #292929);	
-	background: linear-gradient(#393939, #292929);
-	color: #5f5;
-	outline: none;
+  background: #0c6125;
+  background: -webkit-linear-gradient(#393939, #292929);
+  background: -moz-linear-gradient(#393939, #292929);
+  background: -o-linear-gradient(#393939, #292929);
+  background: -ms-linear-gradient(#393939, #292929);
+  background: linear-gradient(#393939, #292929);
+  color: #5f5;
+  outline: none;
 }
 
 .webdesigntuts-workshop button:active {
-	background: #292929;
-	background: -webkit-linear-gradient(#393939, #292929);
-	background: -moz-linear-gradient(#393939, #292929);
-	background: -o-linear-gradient(#393939, #292929);
-	background: -ms-linear-gradient(#393939, #292929);
-	background: linear-gradient(#393939, #292929);
-	box-shadow: 0 1px 0 #000, inset 1px 0 1px #222;
-	top: 1px;
+  background: #292929;
+  background: -webkit-linear-gradient(#393939, #292929);
+  background: -moz-linear-gradient(#393939, #292929);
+  background: -o-linear-gradient(#393939, #292929);
+  background: -ms-linear-gradient(#393939, #292929);
+  background: linear-gradient(#393939, #292929);
+  box-shadow: 0 1px 0 #000, inset 1px 0 1px #222;
+  top: 1px;
+}
+.fa-eye{
+ color:  #5f5;
+
 }
 
 @-webkit-keyframes glow {
-    0% {
-		border-color: #393;
-		box-shadow: 0 0 5px rgba(0,255,0,.2), inset 0 0 5px rgba(0,255,0,.1), 0 2px 0 #000;
-    }	
-    100% {
-		border-color: #6f6;
-		box-shadow: 0 0 20px rgba(0,255,0,.6), inset 0 0 10px rgba(0,255,0,.4), 0 2px 0 #000;
-    }
+  0% {
+    border-color: #393;
+    box-shadow: 0 0 5px rgba(0, 255, 0, 0.2), inset 0 0 5px rgba(0, 255, 0, 0.1),
+      0 2px 0 #000;
+  }
+  100% {
+    border-color: #6f6;
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.6),
+      inset 0 0 10px rgba(0, 255, 0, 0.4), 0 2px 0 #000;
+  }
 }
 
 @-moz-keyframes glow {
-    0% {
-		border-color: #393;
-		box-shadow: 0 0 5px rgba(0,255,0,.2), inset 0 0 5px rgba(0,255,0,.1), 0 2px 0 #000;
-    }	
-    100% {
-		border-color: #6f6;
-		box-shadow: 0 0 20px rgba(0,255,0,.6), inset 0 0 10px rgba(0,255,0,.4), 0 2px 0 #000;
-    }
+  0% {
+    border-color: #393;
+    box-shadow: 0 0 5px rgba(0, 255, 0, 0.2), inset 0 0 5px rgba(0, 255, 0, 0.1),
+      0 2px 0 #000;
+  }
+  100% {
+    border-color: #6f6;
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.6),
+      inset 0 0 10px rgba(0, 255, 0, 0.4), 0 2px 0 #000;
+  }
 }
 
 @-o-keyframes glow {
-    0% {
-		border-color: #393;
-		box-shadow: 0 0 5px rgba(0,255,0,.2), inset 0 0 5px rgba(0,255,0,.1), 0 2px 0 #000;
-    }	
-    100% {
-		border-color: #6f6;
-		box-shadow: 0 0 20px rgba(0,255,0,.6), inset 0 0 10px rgba(0,255,0,.4), 0 2px 0 #000;
-    }
+  0% {
+    border-color: #393;
+    box-shadow: 0 0 5px rgba(0, 255, 0, 0.2), inset 0 0 5px rgba(0, 255, 0, 0.1),
+      0 2px 0 #000;
+  }
+  100% {
+    border-color: #6f6;
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.6),
+      inset 0 0 10px rgba(0, 255, 0, 0.4), 0 2px 0 #000;
+  }
 }
 
 @-ms-keyframes glow {
-    0% {
-		border-color: #393;
-		box-shadow: 0 0 5px rgba(0,255,0,.2), inset 0 0 5px rgba(0,255,0,.1), 0 2px 0 #000;
-    }	
-    100% {
-		border-color: #6f6;
-		box-shadow: 0 0 20px rgba(0,255,0,.6), inset 0 0 10px rgba(0,255,0,.4), 0 2px 0 #000;
-    }
+  0% {
+    border-color: #393;
+    box-shadow: 0 0 5px rgba(0, 255, 0, 0.2), inset 0 0 5px rgba(0, 255, 0, 0.1),
+      0 2px 0 #000;
+  }
+  100% {
+    border-color: #6f6;
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.6),
+      inset 0 0 10px rgba(0, 255, 0, 0.4), 0 2px 0 #000;
+  }
 }
 
 @keyframes glow {
-    0% {
-		border-color: #393;
-		box-shadow: 0 0 5px rgba(0,255,0,.2), inset 0 0 5px rgba(0,255,0,.1), 0 2px 0 #000;
-    }	
-    100% {
-		border-color: #6f6;
-		box-shadow: 0 0 20px rgba(0,255,0,.6), inset 0 0 10px rgba(0,255,0,.4), 0 2px 0 #000;
-    }
+  0% {
+    border-color: #393;
+    box-shadow: 0 0 5px rgba(0, 255, 0, 0.2), inset 0 0 5px rgba(0, 255, 0, 0.1),
+      0 2px 0 #000;
+  }
+  100% {
+    border-color: #6f6;
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.6),
+      inset 0 0 10px rgba(0, 255, 0, 0.4), 0 2px 0 #000;
+  }
 }

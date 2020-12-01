@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { UsuarioService } from 'src/app/service/usuarios';
 
 @Component({
   selector: 'app-buscador',
@@ -7,9 +8,33 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BuscadorComponent implements OnInit {
 
-  constructor() { }
+  @ViewChild("search") search: ElementRef;
+  public user: Array<string>;
+  paginaActual: number =1;
 
-  ngOnInit(): void {
+  constructor(private _servicio: UsuarioService) {
+
+    this.user=[];
   }
 
+  ngOnInit(): void {
+    this.mostrarUsuario();
+  }
+
+  mostrarUsuario() {
+
+    this._servicio.getUsuarios().subscribe((res) => {
+      for (let i = 0; i < res.length; i++) {   
+        if(res[i].identity.name == this.search.nativeElement.value){
+            this.user.push(res[i]);
+            console.log(res[i])
+        }else{
+          this.user.push(res[i]);
+          console.log(res[i])
+        }
+      }     
+    }, error=>{
+      console.log("error get")
+    });
+  }
 }
