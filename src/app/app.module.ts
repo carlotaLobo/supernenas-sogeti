@@ -12,6 +12,7 @@ import { HttpClientModule } from '@angular/common/http';
 import {​​​​ FormsModule }​​​​ from '@angular/forms';
 import {NgxPaginationModule} from 'ngx-pagination';
 import { GeneroPipe } from './pipes/genero.pipe';
+import { MayusculasPipe } from './pipes/mayusculas.pipe';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { GeneroPipe } from './pipes/genero.pipe';
     CardsComponent,
     BuscadorComponent,
     UserComponent,
-    GeneroPipe
+    GeneroPipe,
+    MayusculasPipe
   ],
   imports: [
     BrowserModule,

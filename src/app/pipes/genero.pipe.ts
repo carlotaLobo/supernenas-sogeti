@@ -8,9 +8,9 @@ export class GeneroPipe implements PipeTransform {
   transform(value: unknown): string {
 
     if(value == 'm'){
-      return 'Masculino'
+      return 'Hombre'
     }else{
-      return 'Femenino';
+      return 'Mujer';
     }
 
     
