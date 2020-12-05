@@ -40,7 +40,7 @@ export class BuscadorComponent implements OnInit {
     this._servicio.getUsuarios().subscribe(
       (res) => {
         for (let i = 0; i < res.length; i++) {
-          if (res[i].identity.name == 'Marco') { //this.search.nativeElement.value
+          if (res[i].identity.name == this.search.nativeElement.value) { 
             this.users.push(res[i]);
             this.paginacion('flex');
           }

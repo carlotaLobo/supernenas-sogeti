@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Global } from './global';
-import { UserModel } from '../models/userModel';
 import { AuthModel } from '../models/authModel';
 
 @Injectable()
@@ -13,18 +12,21 @@ export class UsuarioService {
     this.urlUsers = Global.URLusers;
   }
   getLogin(user: AuthModel): Observable<any> {
-  let headers = {
+    /* let headers = {
       headers: new HttpHeaders({
         'content-type': 'charset=utf-8',
         'password': user.password,
         'user': user.user,
       }),
-    };
-    return this._http.post(Global.URLAuthentication,{headers: headers})
+    }; */
+    let header = new HttpHeaders()
+      .set('password', user.password)
+      .set('user', user.user);
 
+    return this._http.post(Global.URLAuthentication,'', {headers: header});
   }
   getUsuarios(): Observable<any> {
-    return this._http.get(this.urlUsers);
+    let headers= new HttpHeaders().set('access-token', localStorage.getItem('token'));
+    return this._http.get(this.urlUsers, {headers: headers} );
   }
-
 }

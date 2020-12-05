@@ -13,6 +13,7 @@ export class UserComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {
+    
     var v = JSON.stringify(this.usuario['vehicles']);
     var init = v.indexOf('{');
     var end = v.indexOf(':');

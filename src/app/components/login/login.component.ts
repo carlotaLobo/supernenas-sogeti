@@ -1,8 +1,7 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { AuthModel } from 'src/app/models/authModel';
-import { UserModel } from 'src/app/models/userModel';
 import { UsuarioService } from 'src/app/service/usuarios';
-
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -15,20 +14,24 @@ export class LoginComponent implements OnInit {
 
   public user: AuthModel;
 
-  constructor(private _service: UsuarioService) {}
+  constructor(private _service: UsuarioService, private _router:Router) {}
 
   ngOnInit(): void {}
 
   login() {
+    this.user = new AuthModel(
+      this.usuario.nativeElement.value,
+      this.contrasena.nativeElement.value
+    );
 
-    this.user= new AuthModel(this.usuario.nativeElement.value, this.contrasena.nativeElement.value);
-
-    this._service
-      .getLogin(this.user)
-      .subscribe((res) => {
-        console.log(res);
-      }, error=>{
+    this._service.getLogin(this.user).subscribe(
+      (res) => {
+        localStorage.setItem('token', res.token);
+        this._router.navigate(['buscador']);
+      },
+      (error) => {
         console.log(error);
-      });
+      }
+    );
   }
 }

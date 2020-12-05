@@ -5,8 +5,8 @@ import { LoginComponent } from './components/login/login.component';
 import { UserComponent } from './components/user/user.component';
 
 const routes: Routes = [
-  //{path:'' , component:LoginComponent},
-  {path:'' , component:BuscadorComponent},
+  {path:'' , component:LoginComponent},
+  {path:'buscador' , component:BuscadorComponent},
   {path:'user/:id' , component:UserComponent}
 ];
 
