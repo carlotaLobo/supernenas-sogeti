@@ -11,6 +11,7 @@ import {UsuarioService} from './service/usuarios';
 import { HttpClientModule } from '@angular/common/http';
 import {​​​​ FormsModule }​​​​ from '@angular/forms';
 import {NgxPaginationModule} from 'ngx-pagination';
+import { GeneroPipe } from './pipes/genero.pipe';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import {NgxPaginationModule} from 'ngx-pagination';
     LoginComponent,
     CardsComponent,
     BuscadorComponent,
-    UserComponent
+    UserComponent,
+    GeneroPipe
   ],
   imports: [
     BrowserModule,

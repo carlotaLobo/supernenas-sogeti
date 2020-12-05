@@ -1,9 +1,7 @@
 export class VehiclesModel{
     constructor(
-        public marca: {
-            model: string,
-            plate: string
-        }
+        public model: string,
+        public  plate: string      
     ) {
         
     }
