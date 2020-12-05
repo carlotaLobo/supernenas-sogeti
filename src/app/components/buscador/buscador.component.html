@@ -20,12 +20,12 @@
                         <th scope="col">Detalle</th>
                     </tr>
                 </thead>
-                <tbody *ngIf="user.length > 0">
-                    <tr *ngFor="let u of user | paginate:
+                <tbody *ngIf="users.length > 0">
+                    <tr *ngFor="let u of users | paginate:
                     {
                     itemsPerPage: 2,
                     currentPage: paginaActual,
-                    totalItems: user.length 
+                    totalItems: users.length 
                     }
                     ">
                         <td>{{u.identity.name}}</td>
@@ -45,4 +45,7 @@
         </div>
     </div>
 
+
 </section>
+
+<app-user *ngIf="users.length > 0" [users]='users' (close)='close($event)' ></app-user>

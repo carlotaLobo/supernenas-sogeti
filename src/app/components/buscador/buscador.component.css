@@ -12,6 +12,22 @@
   margin-top: 10vh;
 }
 
+.modal-window{
+background-color: tomato;
+ 
+}
+
+.paginacion /deep/ .ngx-pagination {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10vh;
+}
+.paginacion /deep/ .ngx-pagination .disabled span {
+
+  color: #2e2e2e !important;
+}
+
 .webdesigntuts-workshop {
   background: #1a1a1a;
   position: absolute;
@@ -21,24 +37,20 @@
   background:#2e2e2e;
   color: #2e2e2e;
 }
+
+.paginacion /deep/ .ngx-pagination a {
+  color: green;
+}
 .paginacion /deep/ .ngx-pagination span{
   background: none;
   color: green;
 }
-.pagination-next :disabled{
-  background: none;
-  color: #2e2e2e;
+.paginacion /deep/ .ngx-pagination ::before{
+ display: none !important;
 }
-/* .webdesigntuts-workshop:before,
-.webdesigntuts-workshop:after {
-	content: '';
-	display: block;	
-	height: 1px;
-	left: 50%;
-	margin: 0 0 0 -400px;
-	position: absolute;
-	width: 800px;
-} */
+.paginacion /deep/ .ngx-pagination ::after{
+  display: none !important;
+}
 
 hr {
   border: 0.5px solid #2e2e2e;

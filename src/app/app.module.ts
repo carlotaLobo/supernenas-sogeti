@@ -4,7 +4,6 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
-import { Login2Component } from './components/login2/login2.component';
 import { CardsComponent } from './components/cards/cards.component';
 import { BuscadorComponent } from './components/buscador/buscador.component';
 import { UserComponent } from './components/user/user.component';
@@ -18,7 +17,6 @@ import {NgxPaginationModule} from 'ngx-pagination';
   declarations: [
     AppComponent,
     LoginComponent,
-    Login2Component,
     CardsComponent,
     BuscadorComponent,
     UserComponent

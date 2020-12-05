@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import anime from 'animejs/lib/anime.es.js';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { UserModel } from 'src/app/models/userModel';
+import { UsuarioService } from 'src/app/service/usuarios';
+
 
 @Component({
   selector: 'app-login',
@@ -7,24 +9,25 @@ import anime from 'animejs/lib/anime.es.js';
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
-  constructor() {}
+  @ViewChild('usuario') usuario: ElementRef;
+  @ViewChild('contrasena') contrasena: ElementRef;
 
-  ngOnInit(): void {
-    var pathEls = document.querySelectorAll('path');
-    for (var i = 0; i < pathEls.length; i++) {
-      var pathEl = pathEls[i];
-      var offset = anime.setDashoffset(pathEl);
-      pathEl.setAttribute('stroke-dashoffset', offset);
-      anime({
-        targets: pathEl,
-        strokeDashoffset: [offset, 0],
-        duration: anime.random(1000, 3000),
-        delay: anime.random(0, 2000),
-        loop: true,
-        direction: 'alternate',
-        easing: 'easeInOutSine',
-        autoplay: true,
+  public user: UserModel;
+
+  constructor(private _service: UsuarioService) {}
+
+  ngOnInit(): void {}
+
+  login() {
+
+    this.user= new UserModel(this.usuario.nativeElement.value, this.contrasena.nativeElement.value);
+
+    this._service
+      .getLogin(this.user)
+      .subscribe((res) => {
+        console.log(res);
+      }, error=>{
+        console.log(error);
       });
-    }
   }
 }
