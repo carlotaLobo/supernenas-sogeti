@@ -27,16 +27,18 @@
                     currentPage: paginaActual,
                     totalItems: users.length 
                     }
-                    ">
+                    ;let i=index" >
                         <td>{{u.identity.name}}</td>
                         <td>{{u.identity.firstname}}</td>
                         <td>{{u.identity.secondname}}</td>
                         <td>{{u.identity.dateofbirth}}</td>
-                        <td> <a [routerLink]="['/user', u.identifier]" routerLinkActive="router-link-active">
-                                <!-- <i class="far fa-eye fa-2x"></i> -->
+                        <td>
+                            <!--<a [routerLink]="['/user', u.identifier]" routerLinkActive="router-link-active">
+                                 <i class="far fa-eye fa-2x"></i></a> -->
+                            <span (click)='verUsuario(i)'>
                                 <div class="spinner-grow spinner-grow-sm text-success"></div>
+                            </span>
 
-                            </a>
                         </td>
                     </tr>
                 </tbody>
@@ -48,4 +50,4 @@
 
 </section>
 
-<app-user *ngIf="users.length > 0" [users]='users' (close)='close($event)' ></app-user>
+<app-user *ngIf="usuario && mostrarModal" [usuario]='usuario' (close)='close($event)'></app-user>

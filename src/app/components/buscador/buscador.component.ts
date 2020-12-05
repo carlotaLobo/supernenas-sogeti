@@ -1,7 +1,15 @@
-import { Component, ElementRef, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  EventEmitter,
+  OnInit,
+  Output,
+  ViewChild,
+} from '@angular/core';
 //import { $ } from 'protractor';
 import { UsuarioService } from 'src/app/service/usuarios';
 import * as $ from 'jquery/dist/jquery.js';
+import { UserModel } from 'src/app/models/userModel';
 
 @Component({
   selector: 'app-buscador',
@@ -13,28 +21,32 @@ export class BuscadorComponent implements OnInit {
 
   public users: Array<string>;
   paginaActual: number = 1;
-
+  public mostrarModal: boolean;
+  public usuario: string;
 
   constructor(private _servicio: UsuarioService) {
     this.users = [];
+    this.mostrarModal = false;
   }
 
   ngOnInit(): void {
     this.mostrarUsuario();
   }
 
+  verUsuario(select) {
+    this.mostrarModal = true;
+    this.usuario=this.users[select];
+    console.log(this.usuario)
+  }
+
   mostrarUsuario() {
     this._servicio.getUsuarios().subscribe(
       (res) => {
         for (let i = 0; i < res.length; i++) {
-          if (res[i].identity.name == this.search.nativeElement.value) {    
+          if (res[i].identity.name == 'Jake') { //this.search.nativeElement.value
             this.users.push(res[i]);
-            $(document).ready(function () {
-              $('.ngx-pagination').css('display', 'flex');
-            });
-          }else{
-            this.users.push(res[i]);
-          } 
+            this.paginacion('flex');
+          }
         }
       },
       (error) => {
@@ -43,8 +55,17 @@ export class BuscadorComponent implements OnInit {
     );
   }
 
-  close(event){
-    console.log('padre')
-    this.users=[];
+  paginacion(opcion): void {
+    $(document).ready(function () {
+      $('.ngx-pagination').css('display', opcion);
+    });
+  }
+
+  close(event) {
+    //cierra ventana modal
+    this.users = [];
+    this.usuario = null;
+    this.search.nativeElement.value = '';
+    this.paginacion('none');
   }
 }

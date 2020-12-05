@@ -1,9 +1,10 @@
 <div class="container-fluid">
     <div class="row">
-
         <div class="col m-5">
-            <div class="cross" (click)='closeModal($event)'><i class="fas fa-times"></i></div>
-            <h3 class="titulo">USER</h3>
+            <div class="cross" (click)='closeModal()'><i class="fas fa-times"></i></div>
+            <h3 class="titulo d-flex flex-row ">
+                <h2 *ngIf="usuario">{{usuario['identity'].name}} {{usuario['identity'].secondname}}</h2>
+            </h3>
         </div>
     </div>
 </div>
