@@ -23,6 +23,7 @@
     "@fortawesome/fontawesome-svg-core": "^1.2.32",
     "@fortawesome/free-solid-svg-icons": "^5.15.1",
     "@popperjs/core": "^2.5.4",
+    "animate.css": "^4.1.1",
     "animejs": "^3.2.1",
     "bootstrap": "^4.5.3",
     "jquery": "^3.5.1",

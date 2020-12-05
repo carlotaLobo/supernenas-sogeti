@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Global } from './global';
 import { UserModel } from '../models/userModel';
+import { AuthModel } from '../models/authModel';
 
 @Injectable()
 export class UsuarioService {
@@ -11,7 +12,7 @@ export class UsuarioService {
   constructor(private _http: HttpClient) {
     this.urlUsers = Global.URLusers;
   }
-  getLogin(user: UserModel): Observable<any> {
+  getLogin(user: AuthModel): Observable<any> {
   let headers = {
       headers: new HttpHeaders({
         'content-type': 'charset=utf-8',

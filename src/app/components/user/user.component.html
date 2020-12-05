@@ -1,10 +1,19 @@
-<div class="container-fluid">
+<div class="container-fluid animate__animated animate__fadeInLeft">
     <div class="row">
-        <div class="col m-5">
+        <div class="col m-5" *ngIf="usuario">
             <div class="cross" (click)='closeModal()'><i class="fas fa-times"></i></div>
             <h3 class="titulo d-flex flex-row ">
-                <h2 *ngIf="usuario">{{usuario['identity'].name}} {{usuario['identity'].secondname}}</h2>
+                <h2 >{{usuario['identity'].name}} {{usuario['identity'].secondname}}</h2>
             </h3>
+            <ul>
+                <li>First Name: {{usuario.identity.firstname}}</li>
+                <li>Sex: {{usuario.identity.sex}}</li>
+                <li>Date: {{usuario.identity.dateofbirth}}</li>
+                <li>Heigth: {{usuario.identity.height}}</li>
+                <li>Job: {{usuario.job}}</li>
+                <li>Money: {{usuario.bank_money}}</li>
+                <li>Licenses: {{usuario.licenses.weapon}} </li>
+            </ul>
         </div>
     </div>
 </div>

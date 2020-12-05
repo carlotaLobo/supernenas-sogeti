@@ -2,10 +2,11 @@
 
 .container-fluid {
   position: absolute;
-  background-color: #1a1a1a !important;
+  background-color: #1a1a1ae5 !important;
   height: 100vh;
   width: 100vw;
   z-index: 1;
+  color: azure;
 }
 .titulo {
   color: #5f5;

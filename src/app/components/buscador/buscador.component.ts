@@ -1,12 +1,9 @@
 import {
   Component,
   ElementRef,
-  EventEmitter,
   OnInit,
-  Output,
   ViewChild,
 } from '@angular/core';
-//import { $ } from 'protractor';
 import { UsuarioService } from 'src/app/service/usuarios';
 import * as $ from 'jquery/dist/jquery.js';
 import { UserModel } from 'src/app/models/userModel';
@@ -19,10 +16,10 @@ import { UserModel } from 'src/app/models/userModel';
 export class BuscadorComponent implements OnInit {
   @ViewChild('search') search: ElementRef;
 
-  public users: Array<string>;
+  public users: Array<UserModel>;
   paginaActual: number = 1;
   public mostrarModal: boolean;
-  public usuario: string;
+  public usuario: UserModel;
 
   constructor(private _servicio: UsuarioService) {
     this.users = [];
@@ -43,7 +40,7 @@ export class BuscadorComponent implements OnInit {
     this._servicio.getUsuarios().subscribe(
       (res) => {
         for (let i = 0; i < res.length; i++) {
-          if (res[i].identity.name == 'Jake') { //this.search.nativeElement.value
+          if (res[i].identity.name == 'Marco') { //this.search.nativeElement.value
             this.users.push(res[i]);
             this.paginacion('flex');
           }
