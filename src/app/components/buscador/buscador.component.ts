@@ -1,9 +1,4 @@
-import {
-  Component,
-  ElementRef,
-  OnInit,
-  ViewChild,
-} from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { UsuarioService } from 'src/app/service/usuarios';
 import * as $ from 'jquery/dist/jquery.js';
 import { UserModel } from 'src/app/models/userModel';
@@ -32,15 +27,26 @@ export class BuscadorComponent implements OnInit {
 
   verUsuario(select) {
     this.mostrarModal = true;
-    this.usuario=this.users[select];
-    console.log(this.usuario)
+    this.usuario = this.users[select];
+    console.log(this.usuario);
   }
 
   mostrarUsuario() {
     this._servicio.getUsuarios().subscribe(
       (res) => {
         for (let i = 0; i < res.length; i++) {
-          if (res[i].identity.name == this.search.nativeElement.value) { 
+          var data = res[i].identity.name + res[i].identity.firstname;
+
+          if (
+            res[i].identity.name ==
+              this.search.nativeElement.value.replaceAll(' ', '') ||
+            res[i].identity.name + res[i].identity.firstname ==
+              this.search.nativeElement.value.replaceAll(' ', '') ||
+            res[i].identity.name +
+              res[i].identity.firstname +
+              res[i].identity.secondname ==
+              this.search.nativeElement.value.replaceAll(' ', '')
+          ) {
             this.users.push(res[i]);
             this.paginacion('flex');
           }

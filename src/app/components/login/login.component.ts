@@ -1,7 +1,7 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { AuthModel } from 'src/app/models/authModel';
 import { UsuarioService } from 'src/app/service/usuarios';
-import {Router} from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -14,7 +14,7 @@ export class LoginComponent implements OnInit {
 
   public user: AuthModel;
 
-  constructor(private _service: UsuarioService, private _router:Router) {}
+  constructor(private _service: UsuarioService, private _router: Router) {}
 
   ngOnInit(): void {}
 
@@ -26,8 +26,10 @@ export class LoginComponent implements OnInit {
 
     this._service.getLogin(this.user).subscribe(
       (res) => {
-        localStorage.setItem('token', res.token);
-        this._router.navigate(['buscador']);
+        if (res.auth) {
+          localStorage.setItem('token', res.token);
+          this._router.navigate(['buscador']);
+        }
       },
       (error) => {
         console.log(error);

@@ -1,18 +1,22 @@
-<div class="row d-flex align-content-center flex-column justify-content-center my-5">
-    <div class="col col-6 d-flex justify-content-center my-5">
-        <h3>Login</h3>
+<div class="login d-flex flex-column justify-content-center align-items-center">
+
+    <div class="card d-flex align-items-center" style="width: 25rem; height: 30rem;">
+        <div class="card-title my-5">
+            <h3><i class="fas fa-user fa-2x"></i></h3>
+        </div>
+        <div class="card-body">
+            <form #formlogin="ngForm">
+                <div class="form-group">
+                    <label>Usuario:</label>
+                    <input #usuario name="usuario" type="text" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label>Contraseña:</label>
+                    <input #contrasena name="contrasena" type="password" class="form-control">
+                </div>
+                <button (click)="login()" class="btn btn-success btn-block">Entrar</button>
+            </form>
+        </div>
     </div>
-    <div class="col col-6">
-        <form #formlogin="ngForm">
-            <div class="form-group">
-                <label>Usuario:</label>
-                <input #usuario name="usuario" type="text" class="form-control">
-            </div>
-            <div class="form-group">
-                <label>Contraseña:</label>
-                <input #contrasena name="contrasena" type="text" class="form-control">
-            </div>
-            <button (click)="login()" class="btn btn-success">Entrar</button>
-        </form>
-    </div>
+
 </div>

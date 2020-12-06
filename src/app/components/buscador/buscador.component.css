@@ -1,5 +1,8 @@
 @import url(https://fonts.googleapis.com/css?family=Cabin:400);
-
+* {
+  font-family: "Cabin", helvetica, arial, sans-serif;
+  font-weight: 100;
+}
 .center {
   height: 100vh;
   width: 100vw;
@@ -12,11 +15,6 @@
   margin-top: 10vh;
 }
 
-.modal-window{
-background-color: tomato;
- 
-}
-
 .paginacion /deep/ .ngx-pagination {
   display: none;
   justify-content: center;
@@ -24,7 +22,6 @@ background-color: tomato;
   margin-top: 10vh;
 }
 .paginacion /deep/ .ngx-pagination .disabled span {
-
   color: #2e2e2e !important;
 }
 
@@ -34,21 +31,21 @@ background-color: tomato;
   text-align: center;
 }
 .paginacion /deep/ .ngx-pagination .current {
-  background:#2e2e2e;
+  background: #2e2e2e;
   color: #2e2e2e;
 }
 
 .paginacion /deep/ .ngx-pagination a {
-  color: green;
+  color: #5f5;
 }
-.paginacion /deep/ .ngx-pagination span{
+.paginacion /deep/ .ngx-pagination span {
   background: none;
-  color: green;
+  color: #5f5;
 }
-.paginacion /deep/ .ngx-pagination ::before{
- display: none !important;
+.paginacion /deep/ .ngx-pagination ::before {
+  display: none !important;
 }
-.paginacion /deep/ .ngx-pagination ::after{
+.paginacion /deep/ .ngx-pagination ::after {
   display: none !important;
 }
 
@@ -75,10 +72,9 @@ hr {
   top: 298px;
 }
 
-
-table thead{
-	box-shadow: 0px 0px 10px 0px rgb(0, 0, 0) inset;
-	background-color: rgb(34, 34, 34);
+table thead {
+  box-shadow: 0px 0px 10px 0px rgb(0, 0, 0) inset;
+  background-color: rgb(34, 34, 34);
 }
 
 .table {
@@ -88,13 +84,14 @@ table thead{
 .table td,
 .table th {
   border-top: none;
-  color: green;
+  color: #5f5;
 }
-.table tbody td{
+.table tbody td {
   border-top: 1px solid #57ca7a28;
 
-/*   box-shadow: 0px 0px 1px 0px #03e647 inset;
- */}
+  /*   box-shadow: 0px 0px 1px 0px #03e647 inset;
+ */
+}
 .table thead th {
   border-bottom: none;
 }
@@ -103,11 +100,11 @@ table thead{
   background: -webkit-linear-gradient(#76ca8f, #111);
   background: -moz-linear-gradient(#57ca7a, #111);
   background: -o-linear-gradient(#249646, #111);
-  background: -ms-linear-gradient(#307043, #111);
-  background: linear-gradient(#0c6125, #111);
+  background: -ms-linear-gradient(#5f5, #111);
+  background: linear-gradient(#5f5, #111);
   border: 1px solid #000;
   border-radius: 5px;
-  box-shadow: inset 0 0 0 1px #76ca8f;
+  box-shadow: inset 0 0 0 1px #76ca8f52;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
@@ -126,7 +123,6 @@ table thead{
   background: -ms-linear-gradient(#333, #222);
   background: linear-gradient(#333, #222);
   border: 1px solid #444;
-  border-radius: 5px 0 0 5px;
   box-shadow: 0 2px 0 #000;
   color: #888;
   display: block;
@@ -194,9 +190,11 @@ table thead{
   box-sizing: content-box;
   border: 1px solid #444;
   border-left-color: #000;
-/*   border-radius: 0 5px 5px 0;
- */  box-shadow: 0 2px 0 #000;
-  color: #fff;
+
+  /*   border-radius: 0 5px 5px 0;
+ */
+  box-shadow: 0 2px 0 #000;
+  color: #888;
   display: block;
   float: left;
   font-family: "Cabin", helvetica, arial, sans-serif;
@@ -233,9 +231,8 @@ table thead{
   box-shadow: 0 1px 0 #000, inset 1px 0 1px #222;
   top: 1px;
 }
-.fa-eye{
- color:  #5f5;
-
+.fa-eye {
+  color: #5f5;
 }
 
 @-webkit-keyframes glow {

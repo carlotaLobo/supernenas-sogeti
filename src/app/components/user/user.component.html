@@ -5,21 +5,7 @@
     <h3 class="titulo d-flex flex-row m-3">
         <h2>{{usuario.identity.name}} {{usuario.identity.secondname}}</h2>
     </h3>
-    <div class="row">
-        <div class="col m-5 d-flex flex-row justify-content-center justify-content-around" *ngIf="usuario">
 
-            <ul>
-                <li>First Name: {{usuario.identity.firstname}}</li>
-                <li>Sex: {{usuario.identity.sex | genero}}</li>
-                <li>Date: {{usuario.identity.dateofbirth}}</li>
-                <li>Heigth: {{usuario.identity.height}}</li>
-                <li>Job: {{usuario.job}}</li>
-                <li>Money: {{usuario.bank_money}}</li>
-                <li>Licenses: {{usuario.licenses.weapon}} </li>
-                <li>Phone: {{usuario.phone_number}} </li>
-                <li>Vehicles: {{vehicles.model}} </li>
-            </ul>
-           
-        </div>
-    </div>
+    <app-cards [usuario]='usuario' ></app-cards>
+
 </div>

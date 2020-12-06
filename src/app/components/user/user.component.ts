@@ -8,12 +8,16 @@ import { UserModel } from 'src/app/models/userModel';
 export class UserComponent implements OnInit {
   @Input() usuario: UserModel;
   @Output() close = new EventEmitter();
+
   public vehicles = {};
 
   constructor() {}
 
   ngOnInit(): void {
-    
+    this.vehicle();
+  }
+
+  vehicle() {
     var v = JSON.stringify(this.usuario['vehicles']);
     var init = v.indexOf('{');
     var end = v.indexOf(':');
@@ -21,8 +25,7 @@ export class UserComponent implements OnInit {
 
     this.vehicles = JSON.parse(
       v.replace(v.substring(init, end + 1), '').replace(v.charAt(last), '')
-    ); 
-
+    );
   }
 
   closeModal() {

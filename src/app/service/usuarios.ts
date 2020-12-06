@@ -6,27 +6,23 @@ import { AuthModel } from '../models/authModel';
 
 @Injectable()
 export class UsuarioService {
-  private urlUsers: string;
+  private URLUsers: string;
 
   constructor(private _http: HttpClient) {
-    this.urlUsers = Global.URLusers;
+    this.URLUsers = Global.URLUsers;
   }
   getLogin(user: AuthModel): Observable<any> {
-    /* let headers = {
-      headers: new HttpHeaders({
-        'content-type': 'charset=utf-8',
-        'password': user.password,
-        'user': user.user,
-      }),
-    }; */
     let header = new HttpHeaders()
       .set('password', user.password)
       .set('user', user.user);
 
-    return this._http.post(Global.URLAuthentication,'', {headers: header});
+    return this._http.post(Global.URLAuthentication, '', { headers: header });
   }
   getUsuarios(): Observable<any> {
-    let headers= new HttpHeaders().set('access-token', localStorage.getItem('token'));
-    return this._http.get(this.urlUsers, {headers: headers} );
+    let headers = new HttpHeaders().set(
+      'access-token',
+      localStorage.getItem('token')
+    );
+    return this._http.get(this.URLUsers, { headers: headers });
   }
 }
