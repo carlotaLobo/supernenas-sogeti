@@ -8,7 +8,6 @@ import { JobGradesModel } from 'src/app/models/jobGradesModel';
 import { Router } from '@angular/router';
 import '@popperjs/core/dist/umd/popper.min.js';
 
-
 @Component({
   selector: 'app-buscador',
   templateUrl: './buscador.component.html',
@@ -97,9 +96,7 @@ export class BuscadorComponent implements OnInit {
             this.users.push(res[i]);
             this.paginacion('flex');
           } else {
-          
             $(document).ready(function () {
-
               $('#mostrarmodal').modal('show');
             });
           }

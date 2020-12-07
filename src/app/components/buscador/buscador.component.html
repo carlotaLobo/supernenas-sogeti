@@ -1,5 +1,6 @@
 <section class="webdesigntuts-workshop center container-fluid">
 
+
     <div class="close" (click)='cerrarSesion()'><i class="fas fa-sign-out-alt fa-2x" title="cerrar sesion"></i></div>
     <div class="row d-flex flex-column">
         <div class="col formulario">
@@ -7,32 +8,14 @@
             <hr>
             <form #buscador="ngForm" action="" method="">
                 <input #search type="search" placeholder="name || first name || second name">
-                <button (click)="mostrarUsuario()" data-bs-toggle="modal" data-bs-target="#exampleModal">Search</button>
+                <button (click)="mostrarUsuario()">Search</button>
             </form>
             <hr>
-            <div class="modal fade" id="mostrarmodal" tabindex="-1" aria-labelledby="exampleModalLabel"
-                aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title">Resultado de búsqueda</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            <p>El usuario buscado no existe.</p>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button d-flex justify-content-center " class="btn btn-secondary"
-                                data-bs-dismiss="modal">Close</button>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="col">
 
-                </div>
-            </div>
+        </div>
 
+        <div class="col">
             <table class="table my-4 ">
                 <thead>
                     <tr>
