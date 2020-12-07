@@ -5,9 +5,9 @@ import { UserModel } from 'src/app/models/userModel';
 import { JobsService } from 'src/app/service/jobs';
 import { JobsModel } from 'src/app/models/jobsModel';
 import { JobGradesModel } from 'src/app/models/jobGradesModel';
-import { LicensesModel } from 'src/app/models/licensesModel';
-import { VehiclesModel } from 'src/app/models/vehiclesModel';
 import { Router } from '@angular/router';
+import '@popperjs/core/dist/umd/popper.min.js';
+
 
 @Component({
   selector: 'app-buscador',
@@ -97,7 +97,11 @@ export class BuscadorComponent implements OnInit {
             this.users.push(res[i]);
             this.paginacion('flex');
           } else {
-            this.mostrarModal = true;
+          
+            $(document).ready(function () {
+
+              $('#mostrarmodal').modal('show');
+            });
           }
         }
       },
