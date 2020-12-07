@@ -8,7 +8,7 @@
         </div>
         <div class="col-md-8">
           <div class="card-body">
-            <h5 class="card-title">{{usuario.identity.firstname}}</h5>
+            <h5 class="card-title">Nickname: {{usuario.identity.firstname}}</h5>
             <hr>
             <p class="card-text">Genero: {{usuario.identity.sex | genero}}</p>
             <p class="card-text">Altura: {{usuario.identity.height}} cm</p>
@@ -22,7 +22,8 @@
     <div class="card mb-3" style="max-width: 440px;">
       <div class="row no-gutters">
         <div class="col-md-4 d-flex justify-content-center align-content-center align-items-center">
-          <h5 class="card-title">Trabajo</h5>
+          <i class="fas fa-briefcase fa-2x" title="profesion"></i>
+         <!--  <h5 class="trabajo card-title" (mouseover)='infotrabajo()'>Trabajo</h5> -->
         </div>
         <div class="col-md-8">
           <div class="card-body">
@@ -43,7 +44,7 @@
           </div>
         </div>
       </div>
-    
+
 
     </div>
 

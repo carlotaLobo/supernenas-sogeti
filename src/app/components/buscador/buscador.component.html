@@ -1,15 +1,36 @@
 <section class="webdesigntuts-workshop center container-fluid">
+
+    <div class="close" (click)='cerrarSesion()'><i class="fas fa-sign-out-alt fa-2x" title="cerrar sesion"></i></div>
     <div class="row d-flex flex-column">
         <div class="col formulario">
+
             <hr>
             <form #buscador="ngForm" action="" method="">
                 <input #search type="search" placeholder="name || first name || second name">
                 <button (click)="mostrarUsuario()">Search</button>
             </form>
             <hr>
+
         </div>
 
         <div class="col">
+            <div *ngIf="mostrarModal == true" class="modal" tabindex="-1">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title">Resultado de búsqueda</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <p>El usuario buscado no existe.</p>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button d-flex justify-content-center " class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
             <table class="table my-4 ">
                 <thead>
                     <tr>
@@ -27,7 +48,7 @@
                     currentPage: paginaActual,
                     totalItems: users.length 
                     }
-                    ;let i=index" >
+                    ;let i=index">
                         <td>{{u.identity.name}}</td>
                         <td>{{u.identity.firstname}}</td>
                         <td>{{u.identity.secondname}}</td>
@@ -47,4 +68,5 @@
 
 </section>
 
-<app-user *ngIf="usuario && mostrarModal && trabajo" [trabajo]='trabajo' [usuario]='usuario' (close)='close($event)'></app-user>
+<app-user *ngIf="usuario && mostrarModal && trabajo" [trabajo]='trabajo' [usuario]='usuario' (close)='close($event)'>
+</app-user>

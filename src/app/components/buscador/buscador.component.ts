@@ -7,6 +7,7 @@ import { JobsModel } from 'src/app/models/jobsModel';
 import { JobGradesModel } from 'src/app/models/jobGradesModel';
 import { LicensesModel } from 'src/app/models/licensesModel';
 import { VehiclesModel } from 'src/app/models/vehiclesModel';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-buscador',
@@ -24,19 +25,22 @@ export class BuscadorComponent implements OnInit {
   public trabajo: JobsModel;
   public jobGradels: Array<JobGradesModel>;
   public jobGradel: JobGradesModel;
-
-
-
+  public activarModal: boolean;
   constructor(
     private _servicio: UsuarioService,
-    private _serviceJob: JobsService
+    private _serviceJob: JobsService,
+    private _router: Router
   ) {
     this.users = [];
     this.mostrarModal = false;
+    this.activarModal = false;
   }
 
-  ngOnInit(): void {
-    this.mostrarUsuario();
+  ngOnInit(): void {}
+
+  cerrarSesion() {
+    localStorage.removeItem('token');
+    this._router.navigate(['/']);
   }
 
   jobs() {
@@ -59,12 +63,11 @@ export class BuscadorComponent implements OnInit {
   }
 
   verUsuario(select) {
-
     this.mostrarModal = true;
     this.usuario = this.users[select];
 
-    this.usuario.licenses=Object.values(this.usuario.licenses);
-    this.usuario.vehicles=Object.values(this.usuario.vehicles);
+    this.usuario.licenses = Object.values(this.usuario.licenses);
+    this.usuario.vehicles = Object.values(this.usuario.vehicles);
 
     this.jobs();
   }
@@ -83,16 +86,22 @@ export class BuscadorComponent implements OnInit {
             res[i].identity.name +
               res[i].identity.firstname +
               res[i].identity.secondname ==
+              this.search.nativeElement.value.replaceAll(' ', '') ||
+            res[i].identity.firstname ==
+              this.search.nativeElement.value.replaceAll(' ', '') ||
+            res[i].identity.secondname ==
+              this.search.nativeElement.value.replaceAll(' ', '') ||
+            res[i].identity.firstname + res[i].identity.secondname ==
               this.search.nativeElement.value.replaceAll(' ', '')
           ) {
             this.users.push(res[i]);
             this.paginacion('flex');
+          } else {
+            this.mostrarModal = true;
           }
         }
       },
-      (error) => {
-        console.log('error busqueda');
-      }
+      (error) => {}
     );
   }
 
