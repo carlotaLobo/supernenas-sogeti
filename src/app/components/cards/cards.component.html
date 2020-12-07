@@ -22,6 +22,19 @@
     <div class="card mb-3" style="max-width: 440px;">
       <div class="row no-gutters">
         <div class="col-md-4 d-flex justify-content-center align-content-center align-items-center">
+          <h5 class="card-title">Trabajo</h5>
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title">{{trabajo.label}} - {{trabajo.name}}</h5>
+            <p>Puesto: {{trabajo.job_grades.name}}</p>
+            <p>Salario: {{trabajo.job_grades.salary}}</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="row no-gutters">
+        <div class="col-md-4 d-flex justify-content-center align-content-center align-items-center">
           <i class="fas fa-coins fa-2x"></i>
         </div>
         <div class="col-md-8">
@@ -30,46 +43,35 @@
           </div>
         </div>
       </div>
-      <div class="row no-gutters">
-        <div class="col-md-4 d-flex justify-content-center align-content-center align-items-center">
-          <h5>Trabajo</h5>
-        </div>
-        <div class="col-md-8">
-          <div class="card-body">
-            <h5 class="card-text">{{trabajo.label}} - {{trabajo.name}}</h5>
-            <p>Puesto: {{trabajo.job_grades.name}}</p>
-            <p>Salario: {{trabajo.job_grades.salary}}</p>
-          </div>
-        </div>
-      </div>
-
+    
 
     </div>
 
   </div>
   <div class="col col-6" *ngIf="usuario.vehicles.length > 0">
-    <div class="row no-gutters flex-column my-4">
-      <div class="col-md-4 d-flex justify-content-center align-content-center align-items-center">
-        <h5>Vehiculos</h5>
+    <div class="row no-gutters flex-column my-4 d-flex justify-content-center align-content-center align-items-center">
+      <div class="col-md-4 titulo">
+        <h5 class="card-title">Vehiculos</h5>
       </div>
       <div class="col-md-8">
         <div class="card-body">
-          <ul>
-            <li *ngFor="let v of usuario.vehicles" class="card-text">Modelo: {{v.model}} - {{v.plate}}</li>
-          </ul>
+
+          <span *ngFor="let v of usuario.vehicles" class="badge m-3"> {{v.model}} - {{v.plate}}</span>
+
         </div>
       </div>
     </div>
 
-    <div class="row no-gutters flex-column my-4"  *ngIf="usuario.licenses.length > 0">
-      <div class="col-md-4 d-flex justify-content-center align-content-center align-items-center">
-        <h5>Licencias</h5>
+    <div class="row no-gutters flex-column my-4 d-flex justify-content-center align-content-center align-items-center"
+      *ngIf="usuario.licenses.length > 0">
+      <div class="col-md-4 titulo">
+        <h5 class="card-title">Licencias</h5>
       </div>
       <div class="col-md-8">
         <div class="card-body">
-          <ul>
-            <li *ngFor="let l of usuario.licenses" class="card-text">{{l}}</li>
-          </ul>
+
+          <span *ngFor="let l of usuario.licenses" class="badge m-3">{{l}}</span>
+
         </div>
       </div>
     </div>
