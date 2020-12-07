@@ -5,6 +5,8 @@ import { UserModel } from 'src/app/models/userModel';
 import { JobsService } from 'src/app/service/jobs';
 import { JobsModel } from 'src/app/models/jobsModel';
 import { JobGradesModel } from 'src/app/models/jobGradesModel';
+import { LicensesModel } from 'src/app/models/licensesModel';
+import { VehiclesModel } from 'src/app/models/vehiclesModel';
 
 @Component({
   selector: 'app-buscador',
@@ -22,6 +24,8 @@ export class BuscadorComponent implements OnInit {
   public trabajo: JobsModel;
   public jobGradels: Array<JobGradesModel>;
   public jobGradel: JobGradesModel;
+
+
 
   constructor(
     private _servicio: UsuarioService,
@@ -55,8 +59,13 @@ export class BuscadorComponent implements OnInit {
   }
 
   verUsuario(select) {
+
     this.mostrarModal = true;
     this.usuario = this.users[select];
+
+    this.usuario.licenses=Object.values(this.usuario.licenses);
+    this.usuario.vehicles=Object.values(this.usuario.vehicles);
+
     this.jobs();
   }
 

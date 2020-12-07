@@ -1,6 +1,6 @@
 export class LicensesModel{
     constructor(
-       public weapon:{weapon:string}
+       public weapon:string
     ){
       
     }

@@ -1,10 +1,11 @@
 .card{
   background-color: #1a1a1a;
-
+  border: 1px solid  #5f5; 
 }
 *{
   color:  #5f5;
 }
-.cardverde{
-   border: 1px solid  #5f5; 
+.cajadatos{
+  min-height: 85%;
+  width: 100%;
 }

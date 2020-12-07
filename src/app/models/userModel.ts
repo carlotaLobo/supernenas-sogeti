@@ -10,12 +10,12 @@ export class UserModel{
         public identity: IdentityModel,
         public job: string,
         public job_grade: string,
-        public licenses: LicensesModel,
+        public licenses: Array< LicensesModel>,
         public bank_money: string,     
         public phone_calls: [],
         public phone_number: string,
         public validated: boolean,
         public house_id: string,
-        public vehicles: VehiclesModel
+        public vehicles:Array< VehiclesModel>
        ){}
 }
