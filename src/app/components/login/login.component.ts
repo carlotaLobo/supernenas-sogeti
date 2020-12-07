@@ -28,6 +28,7 @@ export class LoginComponent implements OnInit {
       (res) => {
         if (res.auth) {
           localStorage.setItem('token', res.token);
+
           this._router.navigate(['buscador']);
         }
       },

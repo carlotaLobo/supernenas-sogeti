@@ -2,6 +2,9 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { UsuarioService } from 'src/app/service/usuarios';
 import * as $ from 'jquery/dist/jquery.js';
 import { UserModel } from 'src/app/models/userModel';
+import { JobsService } from 'src/app/service/jobs';
+import { JobsModel } from 'src/app/models/jobsModel';
+import { JobGradesModel } from 'src/app/models/jobGradesModel';
 
 @Component({
   selector: 'app-buscador',
@@ -15,8 +18,15 @@ export class BuscadorComponent implements OnInit {
   paginaActual: number = 1;
   public mostrarModal: boolean;
   public usuario: UserModel;
+  public trabajos: Array<JobsModel>;
+  public trabajo: JobsModel;
+  public jobGradels: Array<JobGradesModel>;
+  public jobGradel: JobGradesModel;
 
-  constructor(private _servicio: UsuarioService) {
+  constructor(
+    private _servicio: UsuarioService,
+    private _serviceJob: JobsService
+  ) {
     this.users = [];
     this.mostrarModal = false;
   }
@@ -25,10 +35,29 @@ export class BuscadorComponent implements OnInit {
     this.mostrarUsuario();
   }
 
+  jobs() {
+    this._serviceJob.getJobs().subscribe((res) => {
+      this.trabajos = Object.values(res);
+      this.trabajos.filter((j) => {
+        if (j.name == this.usuario.job) {
+          this.trabajo = j;
+          this.trabajos = Object.values(j);
+          this.jobGradels = Object.values(this.trabajos[2]);
+
+          for (let i = 0; i < this.jobGradels.length; i++) {
+            if (this.jobGradels[i].grade == this.usuario.job_grade) {
+              this.trabajo.job_grades = this.jobGradels[i];
+            }
+          }
+        }
+      });
+    });
+  }
+
   verUsuario(select) {
     this.mostrarModal = true;
     this.usuario = this.users[select];
-    console.log(this.usuario);
+    this.jobs();
   }
 
   mostrarUsuario() {

@@ -1,4 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { JobGradesModel } from 'src/app/models/jobGradesModel';
+import { JobsModel } from 'src/app/models/jobsModel';
 import { UserModel } from 'src/app/models/userModel';
 @Component({
   selector: 'app-user',
@@ -8,24 +10,13 @@ import { UserModel } from 'src/app/models/userModel';
 export class UserComponent implements OnInit {
   @Input() usuario: UserModel;
   @Output() close = new EventEmitter();
-
-  public vehicles = {};
+  @Input() trabajo: JobGradesModel;
 
   constructor() {}
 
   ngOnInit(): void {
-    this.vehicle();
-  }
+ 
 
-  vehicle() {
-    var v = JSON.stringify(this.usuario['vehicles']);
-    var init = v.indexOf('{');
-    var end = v.indexOf(':');
-    var last = v.lastIndexOf('}');
-
-    this.vehicles = JSON.parse(
-      v.replace(v.substring(init, end + 1), '').replace(v.charAt(last), '')
-    );
   }
 
   closeModal() {

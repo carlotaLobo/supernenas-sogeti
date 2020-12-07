@@ -1,4 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { JobGradesModel } from 'src/app/models/jobGradesModel';
+import { JobsModel } from 'src/app/models/jobsModel';
 import { UserModel } from 'src/app/models/userModel';
 
 @Component({
@@ -8,13 +10,12 @@ import { UserModel } from 'src/app/models/userModel';
 })
 export class CardsComponent implements OnInit {
   @Input() usuario: UserModel;
+  @Input() trabajo: JobsModel;
+
+
   constructor() {}
 
   ngOnInit(): void {
-
-
-    console.log(this.usuario);
+    console.log(this.trabajo)
   }
-
-
 }

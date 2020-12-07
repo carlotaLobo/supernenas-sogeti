@@ -1,56 +1,72 @@
-<div class="card mb-3" style="max-width: 440px;">
-  <div class="row no-gutters">
-    <div class="col-md-4 d-flex justify-content-center align-content-center align-items-center">
-      <i class="fas fa-user fa-3x"></i>
+<div class="row">
+
+  <div class="col col-6">
+    <div class="card mb-3 cardverde" style="max-width: 440px;">
+      <div class="row no-gutters">
+        <div class="col-md-4 d-flex justify-content-center align-content-center align-items-center">
+          <i class="fas fa-user fa-3x"></i>
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title">{{usuario.identity.firstname}}</h5>
+            <hr>
+            <p class="card-text">Genero: {{usuario.identity.sex | genero}}</p>
+            <p class="card-text">Altura: {{usuario.identity.height}} cm</p>
+            <p class="card-text">Fecha Nacimiento: {{usuario.identity.dateofbirth}}</p>
+            <p class="card-text">Telefono: {{usuario.phone_number}}</p>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="col-md-8">
-      <div class="card-body">
-        <h5 class="card-title">{{usuario.identity.firstname}}</h5>
-        <hr>
-        <p class="card-text">Genero: {{usuario.identity.sex | genero}}</p>
-        <p class="card-text">Altura: {{usuario.identity.height}} cm</p>
-        <p class="card-text">Fecha Nacimiento: {{usuario.identity.dateofbirth}}</p>
-        <p class="card-text">Telefono: {{usuario.phone_number}}</p>
+
+    <div class="card mb-3" style="max-width: 440px;">
+      <div class="row no-gutters">
+        <div class="col-md-4 d-flex justify-content-center align-content-center align-items-center">
+          <i class="fas fa-coins fa-2x"></i>
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <p class="card-text">Money: {{usuario.bank_money}}</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="row no-gutters">
+        <div class="col-md-4 d-flex justify-content-center align-content-center align-items-center">
+          <i class="fas fa-car fa-2x"></i>
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <p class="card-text">Vehicles: {{usuario.vehicles | vehicleModel}} - {{usuario.vehicles | vehiclePlate}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="col col-6">
+
+    <div class="row no-gutters">
+      <div class="col-md-4 d-flex justify-content-center align-content-center align-items-center">
+        <i class="fas fa-briefcase fa-2x"></i>
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-text">Job:{{trabajo.label}} {{trabajo.name}}</h5>
+          <p>Puesto: {{trabajo.job_grades.name}}</p>
+          <p>Salario: {{trabajo.job_grades.salary}}</p>
+        </div>
       </div>
     </div>
   </div>
 </div>
-
-<div class="card mb-3" style="max-width: 440px;">
-  <div class="row no-gutters">
-    <div class="col-md-4 d-flex justify-content-center align-content-center align-items-center">
-      <i class="fas fa-coins fa-2x"></i>
-    </div>
-    <div class="col-md-8">
-      <div class="card-body">
-        <p class="card-text">Money: {{usuario.bank_money}}</p>
-      </div>
-    </div>
-  </div>
-  <div class="row no-gutters">
-    <div class="col-md-4 d-flex justify-content-center align-content-center align-items-center">
-      <i class="fas fa-briefcase fa-2x"></i>
-    </div>
-    <div class="col-md-8">
-      <div class="card-body">
-        <p class="card-text">Job: {{usuario.job}}</p>
-      </div>
-    </div>
-  </div>
-  <div class="row no-gutters">
-    <div class="col-md-4 d-flex justify-content-center align-content-center align-items-center">
-      <i class="fas fa-car fa-2x"></i>
-    </div>
-    <div class="col-md-8">
-      <div class="card-body">
-        <p class="card-text">Vehicles: </p>
-      </div>
-    </div>
-  </div>
-</div>
-
 
 <!-- 
+
+  
+
+
+
             <ul>             
                 <li>Job: {{usuario.job}}</li>
                 <li>Licenses: {{usuario.licenses.weapon}} </li>

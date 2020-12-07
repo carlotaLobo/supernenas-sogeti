@@ -47,4 +47,4 @@
 
 </section>
 
-<app-user *ngIf="usuario && mostrarModal" [usuario]='usuario' (close)='close($event)'></app-user>
+<app-user *ngIf="usuario && mostrarModal && trabajo" [trabajo]='trabajo' [usuario]='usuario' (close)='close($event)'></app-user>

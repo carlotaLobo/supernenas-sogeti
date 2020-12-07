@@ -13,6 +13,10 @@ import {​​​​ FormsModule }​​​​ from '@angular/forms';
 import {NgxPaginationModule} from 'ngx-pagination';
 import { GeneroPipe } from './pipes/genero.pipe';
 import { MayusculasPipe } from './pipes/mayusculas.pipe';
+import { AuthGuard } from './service/authguard';
+import { VehicleModelPipe } from './pipes/vehicleModel.pipe';
+import { VehiclePlatePipe } from './pipes/vehiclePlate.pipe';
+import {JobsService} from './service/jobs';
 
 
 @NgModule({
@@ -23,7 +27,9 @@ import { MayusculasPipe } from './pipes/mayusculas.pipe';
     BuscadorComponent,
     UserComponent,
     GeneroPipe,
-    MayusculasPipe
+    MayusculasPipe,
+    VehicleModelPipe,
+    VehiclePlatePipe
   ],
   imports: [
     BrowserModule,
@@ -32,7 +38,7 @@ import { MayusculasPipe } from './pipes/mayusculas.pipe';
     FormsModule,
     NgxPaginationModule
   ],
-  providers: [UsuarioService],
+  providers: [UsuarioService, AuthGuard, JobsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
