@@ -14,8 +14,6 @@ import {NgxPaginationModule} from 'ngx-pagination';
 import { GeneroPipe } from './pipes/genero.pipe';
 import { MayusculasPipe } from './pipes/mayusculas.pipe';
 import { AuthGuard } from './service/authguard';
-import { VehicleModelPipe } from './pipes/vehicleModel.pipe';
-import { VehiclePlatePipe } from './pipes/vehiclePlate.pipe';
 import {JobsService} from './service/jobs';
 
 
@@ -28,8 +26,7 @@ import {JobsService} from './service/jobs';
     UserComponent,
     GeneroPipe,
     MayusculasPipe,
-    VehicleModelPipe,
-    VehiclePlatePipe
+
   ],
   imports: [
     BrowserModule,

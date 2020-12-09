@@ -1,7 +1,22 @@
 <section class="webdesigntuts-workshop center container-fluid">
 
 
-    <div class="close" (click)='cerrarSesion()'><i class="fas fa-sign-out-alt fa-2x" title="cerrar sesion"></i></div>
+    <div class="close" (click)='cerrarSesion()'><i class="fas fa-sign-out-alt fa-1x" title="cerrar sesion"></i></div>
+
+    <div class="" id="modalLogOut">
+        <div class="my-3 d-flex justify-content-center">
+            <h5 class="modal-title"> Cerrar Sesión </h5>
+        </div>
+        <div class="modal-body">
+            ¿Está seguro de que desea cerrar sesión?
+        </div>
+        <div class="my-3 d-flex justify-content-center justify-content-around">
+            <button  type="" class="btn btnmodal cancelar p-2" (click)='cerrarSesion(0)'
+               >Cancelar</button>
+            <button type="" class="btn btnmodal cerrar p-2" (click)='cerrarSesion(1)'> Cerrar Sesión </button>
+        </div>
+    </div>
+
     <div class="row d-flex flex-column">
         <div class="col formulario">
 
@@ -12,10 +27,12 @@
             </form>
             <hr>
 
-
         </div>
-
+        <div *ngIf="aux == 0" class="alert estiloAlert" role="alert">
+            <p class="textoAlert"> Usuario no encontrado </p>
+        </div>
         <div class="col">
+
             <table class="table my-4 ">
                 <thead>
                     <tr>

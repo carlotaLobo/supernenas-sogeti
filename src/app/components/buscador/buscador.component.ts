@@ -24,7 +24,7 @@ export class BuscadorComponent implements OnInit {
   public trabajo: JobsModel;
   public jobGradels: Array<JobGradesModel>;
   public jobGradel: JobGradesModel;
-  public activarModal: boolean;
+  public aux: number;
   constructor(
     private _servicio: UsuarioService,
     private _serviceJob: JobsService,
@@ -32,14 +32,21 @@ export class BuscadorComponent implements OnInit {
   ) {
     this.users = [];
     this.mostrarModal = false;
-    this.activarModal = false;
+    this.aux = 1;
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+  }
 
-  cerrarSesion() {
-    localStorage.removeItem('token');
-    this._router.navigate(['/']);
+  cerrarSesion(opcion?: number) {
+    if (opcion == 1) {
+      localStorage.removeItem('token');
+      this._router.navigate(['/']);
+    } else if (opcion == 0) {
+      document.getElementById('modalLogOut').style.visibility = 'hidden';
+    } else {
+      document.getElementById('modalLogOut').style.visibility = 'visible';
+    }
   }
 
   jobs() {
@@ -72,34 +79,31 @@ export class BuscadorComponent implements OnInit {
   }
 
   mostrarUsuario() {
+    this.users = [];
+    this.aux = 1;
     this._servicio.getUsuarios().subscribe(
       (res) => {
         for (let i = 0; i < res.length; i++) {
-          var data = res[i].identity.name + res[i].identity.firstname;
-
+          var nombre = res[i].identity.name.toLowerCase();
+          var first = res[i].identity.firstname.toLowerCase();
+          var second = res[i].identity.secondname.toLowerCase();
+          var searchData = this.search.nativeElement.value
+            .replaceAll(' ', '')
+            .toLowerCase();
           if (
-            res[i].identity.name ==
-              this.search.nativeElement.value.replaceAll(' ', '') ||
-            res[i].identity.name + res[i].identity.firstname ==
-              this.search.nativeElement.value.replaceAll(' ', '') ||
-            res[i].identity.name +
-              res[i].identity.firstname +
-              res[i].identity.secondname ==
-              this.search.nativeElement.value.replaceAll(' ', '') ||
-            res[i].identity.firstname ==
-              this.search.nativeElement.value.replaceAll(' ', '') ||
-            res[i].identity.secondname ==
-              this.search.nativeElement.value.replaceAll(' ', '') ||
-            res[i].identity.firstname + res[i].identity.secondname ==
-              this.search.nativeElement.value.replaceAll(' ', '')
+            nombre == searchData ||
+            nombre + first == searchData ||
+            nombre + first + second == searchData ||
+            first == searchData ||
+            second == searchData ||
+            first + second == searchData
           ) {
             this.users.push(res[i]);
             this.paginacion('flex');
-          } else {
-            $(document).ready(function () {
-              $('#mostrarmodal').modal('show');
-            });
           }
+        }
+        if (this.users.length <= 0) {
+          this.aux = 0;
         }
       },
       (error) => {}
@@ -113,7 +117,6 @@ export class BuscadorComponent implements OnInit {
   }
 
   close(event) {
-    //cierra ventana modal
     this.users = [];
     this.usuario = null;
     this.search.nativeElement.value = '';

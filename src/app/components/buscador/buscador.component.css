@@ -3,14 +3,77 @@
   font-family: "Cabin", helvetica, arial, sans-serif;
   font-weight: 100;
 }
-.alerta{
+.cancelar {
+  background: -webkit-linear-gradient(#ff0000, #111) !important;
+  background: -moz-linear-gradient(#e90202, #111) !important;
+  background: -o-linear-gradient(#d10303, #111) !important;
+  background: -ms-linear-gradient(rgb(180, 11, 11), #111) !important;
+  background: linear-gradient(rgb(173, 11, 11), #111) !important;
+}
+.cerrar {
+  background: -webkit-linear-gradient(#76ca8f, #111)!important;
+  background: -moz-linear-gradient(#57ca7a, #111)!important;
+  background: -o-linear-gradient(#249646, #111)!important;
+  background: -ms-linear-gradient(#5f5, #111)!important;
+  background: linear-gradient(#5f5, #111)!important;
+}
+.btnmodal {
+  border-radius: 0% !important;
+  background: #111;
+  color: rgb(228, 228, 228) !important;
+  border: 1px solid rgb(51, 51, 51) !important;
+  box-shadow: inset 0 0 0 1px #24242452;
+  border-radius: 5px !important;
+  font-size: 14px !important;
+  text-shadow: none !important;
+}
+
+.alerta {
   display: none;
 }
 .close {
   position: absolute;
   top: 10px;
   right: 7px;
-   color:#5f5;
+  color: #5f5;
+}
+.estiloAlert {
+  background: #111;
+  background: -webkit-linear-gradient(#ff0000, #111);
+  background: -moz-linear-gradient(#e90202, #111);
+  background: -o-linear-gradient(#d10303, #111);
+  background: -ms-linear-gradient(rgb(180, 11, 11), #111);
+  background: linear-gradient(rgb(173, 11, 11), #111);
+  border: 1px solid rgb(31, 31, 31);
+  border-radius: 5px;
+  box-shadow: inset 0 0 0 1px #00000052;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  font-size: 0px;
+  padding: 5px;
+  position: relative;
+  z-index: 1;
+  width: 30vw;
+  height: 5vh;
+  margin: auto;
+}
+#modalLogOut {
+  border: 1px solid rgb(102, 102, 102);
+  position: absolute;
+  top: 33%;
+  width: auto;
+  z-index: 2;
+  padding: 12px;
+  background-color: #000000;
+  color: #888 !important;
+  visibility: hidden;
+}
+
+.textoAlert {
+  color: rgb(228, 228, 228);
+  font-size: 14px;
+  font-weight: 100;
 }
 
 .center {
