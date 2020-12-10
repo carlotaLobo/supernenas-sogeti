@@ -15,6 +15,7 @@ import { GeneroPipe } from './pipes/genero.pipe';
 import { MayusculasPipe } from './pipes/mayusculas.pipe';
 import { AuthGuard } from './service/authguard';
 import {JobsService} from './service/jobs';
+import { MayusculaPipe } from './pipes/mayuscula.pipe';
 
 
 @NgModule({
@@ -26,6 +27,7 @@ import {JobsService} from './service/jobs';
     UserComponent,
     GeneroPipe,
     MayusculasPipe,
+    MayusculaPipe,
 
   ],
   imports: [

@@ -13,7 +13,9 @@ export class CardsComponent implements OnInit {
   @Input() trabajo: JobsModel;
 
 
-  constructor() {}
+  constructor() {
+    console.log(this.usuario)
+  }
 
   ngOnInit(): void {
     console.log(this.usuario)

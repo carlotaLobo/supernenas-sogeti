@@ -79,6 +79,7 @@ export class BuscadorComponent implements OnInit {
   }
 
   mostrarUsuario() {
+    console.log()
     this.users = [];
     this.aux = 1;
     this._servicio.getUsuarios().subscribe(
